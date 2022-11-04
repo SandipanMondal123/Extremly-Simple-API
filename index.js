@@ -11,13 +11,15 @@ app.get("", (req, res) => {
 
 app.post("/book/:id", (req, res) => {
     const { id } = req.params;
-    const {body} = req.body;
-
-    if(!body){
+    const {tom} = req.body;
+    
+    if(!tom){
         res.send({error: `NO BODY`})
+    }else{
+        res.send({message: `this is your post response ${id}`, body: `this is your body message -> ${tom}`})
     }
    
-        res.send({message: `this is your post response ${id}`, body: `this is your body message -> ${body}`})
+    
     
 })
 
